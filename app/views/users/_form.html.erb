@@ -1,12 +1,12 @@
 <%= form_for :user, url: users_path do |f| %>
   <p>
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, pattern:".{4,}", required: true %>
   </p>
 
   <p>
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, pattern:".{4,}", required: true, type: 'email' %>
   </p>
 
   <p class="button">

@@ -5,6 +5,7 @@
 $text-color: white;
 $text-shadow: 0px 0px 50px rgba(0, 0, 0, 0.2);
 
+table,
 h1,
 h2,
 h3,
@@ -63,9 +64,9 @@ header {
 
 .branding {
   text-align: center;
-  h1 {
+  h1, h2 {
+    padding: 50px 0px;
     margin: 0;
-    padding: 200px 0 250px;
     font-size: 4em;
     text-shadow: $text-shadow;
     font-weight: 300;
@@ -86,15 +87,36 @@ header {
       border-radius: 200px;
     }
   }
+  h1 {
+    padding: 200px 0 250px;
+  }
+
+  table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-color;
+    font-size: 1.5em;
+    font-weight: 300;
+    text-align: center;
+    padding: 20px;
+    td, th {
+      padding: 10px 30px;
+      a {
+        color: $text-color;
+        text-decoration: none;
+        font-weight: 300;
+        border-radius: 5px;
+        padding: 6px 12px;
+        margin: 3px;
+        font-size: .65em;
+        background: #EF4836;
+      }
+    }
+  }
 }
 
 form {
-  margin: 0;
-  font-size: 2em;
-  text-shadow: $text-shadow;
-  font-weight: 300;
-  padding: 200px 0 250px;
-  color: $text-color;
   .button input {
     padding: 10px 40px;
     border: 1px white solid;
@@ -102,5 +124,21 @@ form {
     text-decoration: none;
     background-color: transparent;
     color: currentColor;
+  }
+  &:invalid {
+    .button input {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+  margin: 0;
+  font-size: 2em;
+  text-shadow: $text-shadow;
+  font-weight: 300;
+  padding: 200px 0 250px;
+  color: $text-color;
+  input {
+    padding: 5px;
+    border-radius: 5px;
   }
 }
