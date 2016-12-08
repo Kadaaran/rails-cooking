@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Myapp</title>
+    <link rel="stylesheet" href="https://brick.a.ssl.fastly.net/Lato:100,200,400,700">
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="branding">
+      <header class="container">
+        <i><%= link_to 'Home', root_path %></i>
+        <nav>
+          <ul>
+            <li><a href="#form">Register</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </nav>
+      </header>
+      <%= yield %>
+    </div>
+  </body>
+</html>
