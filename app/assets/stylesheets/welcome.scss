@@ -15,11 +15,17 @@ a,
 p {
   font-family: 'Lato';
 }
-
+html {
+  height: 100%;
+}
 body {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(/background_2.jpg);
   margin: 0;
   padding: 0;
-
+  height: 100%;
 }
 
 header {
@@ -57,11 +63,6 @@ header {
 
 .branding {
   text-align: center;
-  background-size: cover;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url(/background_2.jpg);
   h1 {
     margin: 0;
     padding: 200px 0 250px;
@@ -76,10 +77,11 @@ header {
       font-weight: 300;
     }
     a {
-      color: $text-color;
+      color: currentColor;
       font-size: 0.3em;
       padding: 10px 50px;
-      border: 1px $text-color solid;
+      color: currentColor;
+      border: 1px currentColor solid;
       text-decoration: none;
       border-radius: 200px;
     }
@@ -91,5 +93,14 @@ form {
   font-size: 2em;
   text-shadow: $text-shadow;
   font-weight: 300;
+  padding: 200px 0 250px;
   color: $text-color;
+  .button input {
+    padding: 10px 40px;
+    border: 1px white solid;
+    border-radius: 200px;
+    text-decoration: none;
+    background-color: transparent;
+    color: currentColor;
+  }
 }
