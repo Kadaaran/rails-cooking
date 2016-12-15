@@ -8,5 +8,5 @@
     %tr
       %td= user.name
       %td= user.email
-      %td= user.company.name
-      %td= link_to 'Delete', user_path(user), method: :delete
+      %td= user.company.try(:name)
+      -# %td= link_to 'Delete', user_path(user), method: :delete

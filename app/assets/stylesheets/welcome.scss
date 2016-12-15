@@ -13,6 +13,8 @@ h4,
 h5,
 h6,
 a,
+label,
+article,
 p {
   font-family: 'Lato';
 }
@@ -22,6 +24,7 @@ html {
 body {
   background-size: 100%;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
   background-image: url(/background_2.jpg);
   margin: 0;
@@ -29,6 +32,14 @@ body {
   height: 100%;
 }
 
+p.notice {
+  color: #87D37C;
+  font-size: 2em;
+}
+p.alert {
+  color: #F22613;
+  font-size: 2em;
+}
 header {
   display: flex;
   flex-direction: row;
@@ -38,7 +49,7 @@ header {
   align-items: flex-start;
   padding-bottom: 15px;
   height: 50px;
-  margin: 0 20 20 0;
+  margin: 0 0 20 0;
   background-color: rgba(0, 0, 0, 0.2);
   a {
     padding: 20px 20px 0 30px;
@@ -90,34 +101,34 @@ header {
   h1 {
     padding: 200px 0 250px;
   }
-
-  table {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: $text-color;
-    font-size: 1.5em;
-    font-weight: 300;
-    text-align: center;
-    padding: 20px;
-    td, th {
-      padding: 10px 30px;
-      a {
-        color: $text-color;
-        text-decoration: none;
-        font-weight: 300;
-        border-radius: 5px;
-        padding: 6px 12px;
-        margin: 3px;
-        font-size: .65em;
-        background: #EF4836;
-      }
-    }
-  }
 }
 
-form {
-  .button input {
+form#new_user, form#new_company, .simple_form.edit_company {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  font-size: 1.5em;
+  text-shadow: $text-shadow;
+  font-weight: 300;
+  color: $text-color;
+  textarea {
+    display: flex;
+    height: 200px;
+    width: 300px;
+  }
+  abbr {
+    display: none;
+  }
+  div {
+    margin: 10;
+    label {
+      margin-right: 10px;
+    }
+  }
+  input.btn {
+    margin-top: 30px;
     padding: 10px 40px;
     border: 1px $text-color solid;
     border-radius: 200px;
@@ -129,12 +140,6 @@ form {
     opacity: 0.5;
     cursor: not-allowed;
   }
-  margin: 0;
-  font-size: 2em;
-  text-shadow: $text-shadow;
-  font-weight: 300;
-  padding: 200px 0 250px;
-  color: $text-color;
   input {
     padding: 5px;
     border-radius: 5px;

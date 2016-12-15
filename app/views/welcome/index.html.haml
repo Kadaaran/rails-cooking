@@ -7,4 +7,12 @@
 %h1
   BETTER & FASTER
   %small Select the best startups for your program
-  %p= link_to 'Register', new_user_path
+  - if current_user
+    %p="Hello #{current_user.name}"
+    - if !current_user.company_id
+      %p= link_to 'Register Company', new_company_path
+    - else
+      %p= link_to 'My company', company_path(current_user.company_id)
+  - else
+    %p= link_to 'Register', new_user_registration_path
+    %p= link_to 'Sign in', new_user_session_path

@@ -1,7 +1,11 @@
 class User < ApplicationRecord
-  validates :name, presence: true,
-                    length: { minimum: 4 }
-  validates :email, presence: true,
-                    length: { minimum: 4 }
-  belongs_to :company
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  before_validation :set_admin
+  def set_admin
+    self.admin = User.all.empty?
+  end
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+  belongs_to :company, optional: true
 end

@@ -1,0 +1,10 @@
+%h2 Listing Companies
+.content
+  - @companies.each do |company|
+    .company
+      %p= company.name
+      %img{src: company.picture_url}
+      %p= company.user.name
+      .buttons
+        = link_to 'Delete', company_path(company), method: :delete
+        = link_to 'Show', company_path(company), class: 'show'

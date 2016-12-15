@@ -1,0 +1,8 @@
+%h2= @company.name
+- if @company.created_by == current_user.id
+  .edit=link_to 'Edit', edit_company_path(@company)
+.content
+  .display
+    %img{src: @company.picture_url}
+    .description
+      %article= @company.description

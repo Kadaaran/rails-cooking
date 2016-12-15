@@ -1,0 +1,21 @@
+%html
+  %head
+    %title Rails Project
+    %link{:href => "https://brick.a.ssl.fastly.net/Lato:100,200,400,700", :rel => "stylesheet"}/
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .branding
+      %header.container
+        %i= link_to 'Home', root_path
+        %nav
+          %ul
+            - if current_user
+              -# %li= link_to 'Company',
+              - if current_user.admin
+                %li= link_to 'Companies', companies_path
+              %li= link_to 'Log out', destroy_user_session_path, method: :delete
+      %p.notice= notice
+      %p.alert= alert
+      = yield
