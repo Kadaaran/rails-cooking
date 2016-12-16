@@ -26,6 +26,7 @@ gem 'haml'
 gem 'simple_form'
 gem 'devise'
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
+gem 'cancancan'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

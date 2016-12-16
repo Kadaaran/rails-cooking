@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
 
   def index
     if current_user.admin
@@ -35,6 +36,15 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
   end
 
+  def update
+    @company = Company.find(params[:id])
+
+    if @company.update(company_params)
+      redirect_to @company
+    else
+      render 'edit'
+    end
+  end
   def destroy
     @company = Company.find(params[:id])
     @company.destroy

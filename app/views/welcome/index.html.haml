@@ -9,6 +9,8 @@
   %small Select the best startups for your program
   - if current_user
     %p="Hello #{current_user.name}"
+    - if current_user.admin?
+      %small You're admin !
     - if !current_user.company_id
       %p= link_to 'Register Company', new_company_path
     - else
